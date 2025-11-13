@@ -20,15 +20,15 @@
 <body class="bg-violet-50 p-6 poppins-font">
   <header class="navbar bg-base-100 container mx-auto rounded-2xl mb-5 py-6 px-4">
     <div class="flex-1">
-      <button class="flex gap-4 pl-2 cursor-pointer items-center">
+      <button onclick="location.reload()" class="flex gap-4 pl-2 cursor-pointer items-center">
         <img class="w-12" src="assets/logo.png" alt="">
         <h1 class="text-4xl font-normal text-gray-500">Dev<span class="font-bold text-cyan-950">Sys</span></h1>
-      </button>
+      </button onclick="location.reload()">
     </div>
     <div class="flex gap-8">
       <div class="flex items-center gap-3 px-6 py-3 rounded-full bg-violet-50">
         <input type="checkbox" checked="checked" class="checkbox checkbox-primary w-8 h-8" />
-        <h2 class="text-3xl font-bold">23</h2>
+        <h2 id="head-num" class="text-3xl font-bold">23</h2>
       </div>
       <button class="bg-violet-50 rounded-full cursor-pointer">
         <img class="w-16 p-3" src="assets/theme-btn.png" alt="">
@@ -44,20 +44,20 @@
           </div>
           <div>
             <p class="font-semibold text-lg">Task Assigned</p>
-            <h2 class="text-4xl font-extrabold">06</h2>
+            <h2 class="text-4xl font-extrabold">0<span id="assign-num">6</span></h2>
           </div>
         </div>
-        <div class="flex gap-5 items-center py-8 px-8 col-span-2 bg-linear-to-r from-blue-600 to-blue-400 rounded-xl">
+        <div class="flex gap-5 items-center py-8 px-8 col-span-2 bg-linear-to-r from-blue-600 to-blue-300 rounded-xl">
           <img src="assets/board.png" alt="">
           <h2 class="text-2xl text-white">Discover Something <br>New Today!</h2>
         </div>
-        <div class="flex items-center gap-5 py-8 px-7 bg-violet-50 rounded-xl">
-          <div class="bg-white p-4 rounded-full">
+        <div class="flex items-center gap-4 py-8 px-5 bg-violet-50 rounded-xl">
+          <div class="bg-white p-3 rounded-full">
             <img src="assets/calender.png" alt="">
           </div>
           <div>
-            <h3 class="text-2xl">Wed,</h3>
-            <h2 class="text-xl font-bold">Jul 28, 2025</h2>
+            <h3 id="day-of-week" class="text-2xl"></h3>
+            <h2 id="current-date" class="text-2xl font-bold">Jul 28, 2025</h2>
           </div>
         </div>
       </div>
@@ -69,7 +69,7 @@
             <div>
               <button class="bg-white px-4 py-2 rounded-xl text-xl">ShopEase</button>
             </div>
-            <h1 class="text-2xl font-semibold my-3">Fix Mobile Button Issue </h1>
+            <h1 id="work-1" class="text-2xl font-semibold my-3">Fix Mobile Button Issue </h1>
             <p class="bg-white text-lg p-4 rounded-xl text-gray-400">Store the user's preference in localStorage, update
               CSS
             </p>
@@ -79,7 +79,7 @@
                 <h4 class="font-semibold text-gray-400">Deadline</h4>
                 <h2 class="font-bold">21 March 2025</h2>
               </div>
-              <button class="btn bg-blue-600 shadow-none text-white rounded-xl">Completed</button>
+              <button onclick="handleComplete(id, 'work-1')" id="btn-1" class="btn bg-blue-600 shadow-none text-white rounded-xl">Completed</button>
             </div>
           </div>
         </div>
@@ -89,7 +89,7 @@
             <div>
               <button class="bg-white px-4 py-2 rounded-xl text-xl">ShopEase</button>
             </div>
-            <h1 class="text-2xl font-semibold my-3">Add Dark Mode</h1>
+            <h1 id="work-2" class="text-2xl font-semibold my-3">Add Dark Mode</h1>
             <p class="bg-white text-lg p-4 rounded-xl text-gray-400">Store the user's preference in localStorage, update
               CSS</p>
             <hr class="my-3 border-dashed border-violet-200">
@@ -98,7 +98,7 @@
                 <h4 class="font-semibold text-gray-400">Deadline</h4>
                 <h2 class="font-bold">21 March 2025</h2>
               </div>
-              <button class="btn bg-blue-600 shadow-none text-white rounded-xl">Completed</button>
+              <button onclick="handleComplete(id, 'work-2')" id="btn-2" class="btn bg-blue-600 shadow-none text-white rounded-xl">Completed</button>
             </div>
           </div>
         </div>
@@ -108,7 +108,7 @@
             <div>
               <button class="bg-white px-4 py-2 rounded-xl text-xl">SwiftPay</button>
             </div>
-            <h1 class="text-2xl font-semibold my-3">Optimize Home page</h1>
+            <h1 id="work-3" class="text-2xl font-semibold my-3">Optimize Home page</h1>
             <p class="bg-white text-lg p-4 rounded-xl text-gray-400">Store the user's preference in localStorage, update
               CSS
             </p>
@@ -118,7 +118,7 @@
                 <h4 class="font-semibold text-gray-400">Deadline</h4>
                 <h2 class="font-bold">21 March 2025</h2>
               </div>
-              <button class="btn bg-blue-600 shadow-none text-white rounded-xl">Completed</button>
+              <button onclick="handleComplete(id, 'work-3')" id="btn-3" class="btn bg-blue-600 shadow-none text-white rounded-xl">Completed</button>
             </div>
           </div>
         </div>
@@ -128,7 +128,7 @@
             <div>
               <button class="bg-white px-4 py-2 rounded-xl text-xl">Meta</button>
             </div>
-            <h1 class="text-2xl font-semibold my-3">Add new emoji 🤲</h1>
+            <h1 id="work-4" class="text-2xl font-semibold my-3">Add new emoji 🤲</h1>
             <p class="bg-white text-lg p-4 rounded-xl text-gray-400">Store the user's preference in localStorage, update
               CSS
             </p>
@@ -138,7 +138,7 @@
                 <h4 class="font-semibold text-gray-400">Deadline</h4>
                 <h2 class="font-bold">21 March 2025</h2>
               </div>
-              <button class="btn bg-blue-600 shadow-none text-white rounded-xl">Completed</button>
+              <button onclick="handleComplete(id, 'work-4')" id="btn-4" class="btn bg-blue-600 shadow-none text-white rounded-xl">Completed</button>
             </div>
           </div>
         </div>
@@ -148,7 +148,7 @@
             <div>
               <button class="bg-white px-4 py-2 rounded-xl text-xl">Google LLC</button>
             </div>
-            <h1 class="text-2xl font-semibold my-3">Integrate OpenAI API</h1>
+            <h1 id="work-5" class="text-2xl font-semibold my-3">Integrate OpenAI API</h1>
             <p class="bg-white text-lg p-4 rounded-xl text-gray-400">Store the user's preference in localStorage, update
               CSS
             </p>
@@ -158,7 +158,7 @@
                 <h4 class="font-semibold text-gray-400">Deadline</h4>
                 <h2 class="font-bold">21 March 2025</h2>
               </div>
-              <button class="btn bg-blue-600 shadow-none text-white rounded-xl">Completed</button>
+              <button onclick="handleComplete(id, 'work-5')" id="btn-5" class="btn bg-blue-600 shadow-none text-white rounded-xl">Completed</button>
             </div>
           </div>
         </div>
@@ -168,7 +168,7 @@
             <div>
               <button class="bg-white px-4 py-2 rounded-xl text-xl">Glassdoor</button>
             </div>
-            <h1 class="text-2xl font-semibold my-3">Improve Job searching </h1>
+            <h1 id="work-6" class="text-2xl font-semibold my-3">Improve Job searching </h1>
             <p class="bg-white text-lg p-4 rounded-xl text-gray-400">Store the user's preference in localStorage, update
               CSS
             </p>
@@ -178,7 +178,7 @@
                 <h4 class="font-semibold text-gray-400">Deadline</h4>
                 <h2 class="font-bold">21 March 2025</h2>
               </div>
-              <button class="btn bg-blue-600 shadow-none text-white rounded-xl">Completed</button>
+              <button onclick="handleComplete(id,'work-6')" id="btn-6" class="btn bg-blue-600 shadow-none text-white rounded-xl">Completed</button>
             </div>
           </div>
         </div>
@@ -190,15 +190,14 @@
         <h3 class="text-xl">Activity Log</h3>
       </div>
       <div class="flex justify-center my-4">
-        <button class="btn bg-blue-600 rounded-xl text-white">Clear History</button>
+        <button id="clear-history" class="btn bg-blue-600 rounded-xl text-white">Clear History</button>
       </div>
       <hr class="border-dashed border-violet-200">
-      <div class="p-6">
-        <p class="bg-violet-50 p-3 rounded-xl text-gray-400 font-semibold mb-6">You have Complete The Task Add Dark Mode at 12:48:15 PM</p>
-        <p class="bg-violet-50 p-3 rounded-xl text-gray-400 font-semibold">You have Complete The Task Add Dark Mode at 12:48:15 PM</p>
+      <div id="activity" class="p-6">
       </div>
     </div>
   </main>
+  <script src="index.js"></script>
 </body>
 
 </html>
