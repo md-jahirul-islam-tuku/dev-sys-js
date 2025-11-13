@@ -18,7 +18,7 @@ function handleComplete(id, work) {
   const newParagraph = document.createElement('p');
   const workText = document.getElementById(work).innerText;
   newParagraph.textContent = `You have Complete The Task ${workText} at ${time}`;
-  newParagraph.classList.add("bg-violet-50", "p-3", "rounded-xl", "text-gray-400", "font-semibold", "mb-6");
+  newParagraph.classList.add("bg-violet-50", "p-3", "rounded-xl", "text-gray-400", "font-medium", "mb-6");
   activityContainer.appendChild(newParagraph)
 };
 
