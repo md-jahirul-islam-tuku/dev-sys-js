@@ -48,11 +48,6 @@ document.getElementById("current-date").innerText = formatted;
 const time = new Date().toLocaleTimeString("en-US", {
     hour: "numeric",
     minute: "numeric",
-    second: "numeric",
+    // second: "numeric",
     hour12: true
 });
-
-
-
-
-
